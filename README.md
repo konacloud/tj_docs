@@ -367,6 +367,75 @@ Se retornan beneficios (benefits), eventos (events) y convocatorias (calls).
 ]  
 ```
 
+
+## FAVOURITES
+
+#### Request
+
+```js
+GET /favourites
+Host: tj.dev.konabackend.com
+Content-Type: application/json
+Cache-Control: no-cache
+```
+
+#### Response
+
+Se retornan beneficios (benefits), eventos (events) y convocatorias (calls).
+
+```js
+[
+   {  
+      _id:"56c130b14db7206a69164687",
+      _createdAt:"2016-02-15T01:58:09.598Z",
+      _updatedAt:"2016-02-15T01:58:09.598Z",
+      picture:{  
+         url:"bucket/56c1300c4db7206a69164686",
+         width:400,
+         height:600
+      },
+      category:"56c10861bee81dbe3cf09534",
+      company:"56c11336cfe90f1f74f57595",
+      value:"15%",
+      title:"Todos los servicios",
+      description:"15% de descuento en todos los servicios (Alquiler de Vehículos - Autolavado - Gomería y Servicio Completo para autos y camionetas). En efectivo.",
+      date:"Todos los viernes",
+      expirationDate:"2016-03-14T00:00:00.000Z",
+      likes:0,
+      featured:true,
+      promotionType:"STANDARD",
+      type:"PRODUCT",
+      zone:"56c102b7bee81dbe3cf09527",
+      __v:0,
+      lifeStage:[  
+         "STUDY_AND_WORK"
+      ],
+      location:[  
+         -56.191665,
+         -34.912294
+      ],
+      accessibilities:[  
+         {  
+            name:"Rampa",
+            exists:false,
+            _id:"56c130b14db7206a6916468a"
+         },
+         {  
+            name:"Ascensor para ciegos",
+            exists:false,
+            _id:"56c130b14db7206a69164689"
+         },
+         {  
+            name:"Asesoramiento para sordos",
+            exists:false,
+            _id:"56c130b14db7206a69164688"
+         }
+      ]
+   },
+   ...
+]  
+```
+
 ### BENEFIT - LIKE
 
 #### Request
@@ -428,6 +497,17 @@ Cache-Control: no-cache
      }
   ]
 }
+```
+
+### BENEFIT - DIS-LIKE
+
+#### Request
+
+```js
+DELETE /benefits/5klj234jlsd/like
+Host: tj.dev.konabackend.com
+Content-Type: application/json
+Cache-Control: no-cache
 ```
 
 ### EVENT - LIKE
